@@ -13,19 +13,20 @@
 <!DOCTYPE HTML>  
 <html>
 <head>
+<meta charset="UTF-8">
 </head>
 <body>
 
 <h2>Форма отправки сообщения</h2>
 
-<form method="post" action="static.example.php">  
+<form name="form" action="static.example.php" method="post">  
   
   Текст сообщения:<br>
-  <textarea name="text" rows="5" cols="40"><?php echo $params['text'];?></textarea>
+  <textarea name="text" rows="5" cols="40"></textarea>
   <br><br>
   
   Номер телефона:
-  <input type="text" name="to" value="<?php echo $params['to'];?>">
+  <input type="text" name="to">
   <br><br>
   
   <input type="submit" name="submit" value="Отправить">  
