@@ -1,4 +1,6 @@
 <?php
+require 'audio.php';
+
 $target_dir = "";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
@@ -11,14 +13,14 @@ if (file_exists($target_file)) {
 }
 
 // Check file size
-define('MB', 1048576); // Определяем размер Мигабайта
+define('MB', 1048576); // Определяем размер Мегабайта
 if ($_FILES["fileToUpload"]["size"] > 10 * MB) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }
 
 // Allow certain file formats
-if($audioFileType != "mp3" && $imageFileType != "wav") {
+if($audioFileType != "mp3" && $audioFileType != "wav") {
     echo "Sorry, only mp3 & wav files are allowed.";
     $uploadOk = 0;
 }
