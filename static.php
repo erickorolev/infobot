@@ -13,4 +13,4 @@ $params = array(
 
 $api->sendMessage($params); 
 echo $api->response;
-echo '<pre>'; print_r($params); echo '</pre>';
+// echo '<pre>'; print_r($params); echo '</pre>';
