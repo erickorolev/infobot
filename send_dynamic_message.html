@@ -10,13 +10,25 @@
 <h2>Отправка автоматического звонка</h2>
 <h3>Тип: сценарий</h3>
 
-<form name="form" action="upload.php" method="post" enctype="multipart/form-data">  
+<form name="form" action="dynamic.php" method="post">  
   
 	Выбор сценария:<br>
-	<select id="scenarios" name="cars">
+	<select id="scenarios" name="scenarios">
 	</select>
 	<br><br>
   
+	Фамилия:
+	<input type="text" name="lname">
+	<br><br>
+	
+	Имя:
+	<input type="text" name="fname">
+	<br><br>
+	
+	Отчество:
+	<input type="text" name="mname">
+	<br><br>
+	
 	Номер телефона:
 	<input type="text" name="to">
 	<br><br>

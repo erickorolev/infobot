@@ -1,5 +1,5 @@
 
-// Получение информации в формате JSON из PHP файла сервера.
+// Получение информации в формате JSON из PHP файла сервера
 var xmlhttp = new XMLHttpRequest();
 
 xmlhttp.onreadystatechange = function() {
@@ -16,5 +16,5 @@ xmlhttp.onreadystatechange = function() {
 		});
     }
 };
-xmlhttp.open("GET", "dynamic.php", true);
+xmlhttp.open("GET", "get_scenaries_json.php", true);
 xmlhttp.send();
