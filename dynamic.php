@@ -25,5 +25,5 @@ $params = array(
 // $api->sendMessage($params);
 // echo $api->response;
 // echo '<pre>'; print_r($response); echo '</pre>';
-$api->getScenaries();
+echo $api->getScenaries();
 ?>

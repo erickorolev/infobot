@@ -10,24 +10,18 @@
 <h2>Отправка автоматического звонка</h2>
 <h3>Тип: сценарий</h3>
 
-<p id="response"></p>
-
 <form name="form" action="upload.php" method="post" enctype="multipart/form-data">  
   
-  Выбор сценария:<br>
-  <select id="scenarios" name="cars">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="fiat">Fiat</option>
-  <option value="audi">Audi</option>
+	Выбор сценария:<br>
+	<select id="scenarios" name="cars">
 	</select>
-  <br><br>
+	<br><br>
   
-  Номер телефона:
-  <input type="text" name="to">
-  <br><br>
+	Номер телефона:
+	<input type="text" name="to">
+	<br><br>
   
-  <input type="submit" name="submit" value="Отправить">  
+	<input type="submit" name="submit" value="Отправить">  
   
 </form>
 
