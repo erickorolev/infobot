@@ -2,7 +2,7 @@
 include 'InfobotAPI.class.php';
 
 //================ СЦЕНАРИЙ ИЗ СПИСКА В ЛИЧНОМ КАБИНЕТЕ ====================//
-$api = new InfobotAPI("apiKey");
+$api = new InfobotAPI("ye58b133khrtKzZkDBzwzuuepP4NsFhNiQUMjkTyOj3wsKgrLK95tUTtPI7DSQtt");
 $response = json_decode($api->getScenaries()); // Получаем список доступных сценариев
 
 $vaiables = array(
@@ -21,8 +21,9 @@ $params = array(
     //'aon' => '', // АОН
     //'when' => '', //date('Y-m-d H:i:s') Дата когда отправить сообщение
 );
-echo $api->response;
-$api->sendMessage($params);
 
-
-
+// $api->sendMessage($params);
+// echo $api->response;
+// echo '<pre>'; print_r($response); echo '</pre>';
+$api->getScenaries();
+?>

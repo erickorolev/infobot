@@ -15,3 +15,4 @@ $api->sendMessage($params);
 echo $api->response;
 // echo $params['to'];
 // echo $params['url'];
+?>
