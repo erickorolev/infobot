@@ -1,5 +1,5 @@
 
-// Проверка выбора пользователя и на основании его выбора раскрытие необходимых элементов формы
+// Трансформирует форму на основании выбора пользователя
 function checkRadio() {
     if (document.getElementById('text').checked) {
         document.getElementById('for_text').style.display = 'block';
