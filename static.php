@@ -6,7 +6,7 @@ $params = array(
     'to' => $_POST['to'],
     //'custom_id' => "uniq_id", // Присвоить свой ID для сообщения
     //'callback' => "http://callback.url", //URL для отслеживания изменения статуса сообщения
-    //'aon' => '', // АОН
+    'aon' => $_POST['cids'], // АОН
     //'gender' => '', // male|female, По умолчанию male
     //'when' => '', //date('Y-m-d H:i:s') Дата когда отправить сообщение
 );

@@ -1,11 +1,11 @@
 
-// Получение информации в формате JSON из PHP файла сервера
+// Получение списка доступных сценариев в формате JSON из get_scenaries.php
 var xmlhttp = new XMLHttpRequest();
 
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         response = JSON.parse(this.responseText);
-		// Размещение опций в форму из JSON переменной
+		// Размещение списка сценариев из JSON переменной в видео опций формы 
 		$(document).ready(function(){
 			$.each(response.scenaries, function(i) {
 					$('#scenarios')
@@ -16,5 +16,5 @@ xmlhttp.onreadystatechange = function() {
 		});
     }
 };
-xmlhttp.open("GET", "get_scenaries_json.php", true);
+xmlhttp.open("GET", "get_scenaries.php", true);
 xmlhttp.send();
