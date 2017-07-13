@@ -12,9 +12,9 @@ $vaiables = array(
 
 $params = array(
 	'to' => $_POST['to'],
-	'type' => 'audio',
+	'type' => $_POST['type'],
     'text' => $_POST['text'],
-	// URL проигрываемого аудио файла. Отвратительная получилась строка. Но более элегантного решения я не нашел.
+	// URL проигрываемого аудио файла.
 	'url' => str_replace("\\",'/',"http://".$_SERVER['HTTP_HOST'].substr(getcwd(),strlen($_SERVER['DOCUMENT_ROOT']))) . DIRECTORY_SEPARATOR . $_FILES["fileToUpload"]["name"],
     'aon' => $_POST['cids'], // АОН
 	'scenary' => $_POST['scenarios'], // Cценарий
