@@ -6,10 +6,10 @@ $api = new InfobotAPI("ye58b133khrtKzZkDBzwzuuepP4NsFhNiQUMjkTyOj3wsKgrLK95tUTtP
 if ($_POST['type'] == 'text') {
 	
 	$params = array(
-		'to' => $_POST['to'],
-		'type' => $_POST['type'],
-		'text' => $_POST['text'],
-		'aon' => $_POST['cids'], // АОН
+		'to' => clean_input($_POST['to']),
+		'type' => clean_input($_POST['type']),
+		'text' => clean_input($_POST['text']),
+		'aon' => clean_input($_POST['cids']), // АОН
 	);
 		
 } else if ($_POST['type'] == 'audio') {
@@ -18,32 +18,49 @@ if ($_POST['type'] == 'text') {
 	require 'upload.php';
 	
 	$params = array(
-		'to' => $_POST['to'],
-		'type' => $_POST['type'],
+		'to' => clean_input($_POST['to']),
+		'type' => clean_input($_POST['type']),
 		// URL проигрываемого аудио файла.
 		'url' => str_replace("\\",'/',"http://".$_SERVER['HTTP_HOST'].substr(getcwd(),strlen($_SERVER['DOCUMENT_ROOT']))) . DIRECTORY_SEPARATOR . $_FILES["fileToUpload"]["name"],
-		'aon' => $_POST['cids'], // АОН
+		'aon' => clean_input($_POST['cids']), // АОН
 	);
 		
 } else if ($_POST['type'] == 'dynamic') {
 	
 	$vaiables = array(
-		'lname' => $_POST['lname'],
-		'fname' => $_POST['fname'],
-		'mname' => $_POST['mname'],
-		'phone' => $_POST['to']
+		'lname' => clean_input($_POST['lname']),
+		'fname' => clean_input($_POST['fname']),
+		'mname' => clean_input($_POST['mname']),
+		'phone' => clean_input($_POST['to'])
 	);
 
 	$params = array(
-		'to' => $_POST['to'],
-		'type' => $_POST['type'],
-		'aon' => $_POST['cids'], // АОН
-		'scenary' => $_POST['scenarios'], // Cценарий
-		'variables' => $vaiables, //Переменные для используемых в сценарии шаблонов
+		'to' => clean_input($_POST['to']),
+		'type' => clean_input($_POST['type']),
+		'aon' => clean_input($_POST['cids']), // АОН
+		'scenary' => clean_input($_POST['scenarios']), // Cценарий
+		'variables' => $vaiables //Переменные для используемых в сценарии шаблонов
 	);
 }
 
-// $api->sendMessage($params); 
-// echo $api->response;
+// Функция для преобразования введенных пользователем данных в целях безопасности, избавления от сторонних элементов.
+function clean_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
+/*
+$api->sendMessage($params); 
+echo $api->response
+
+if ($api->response[status] == 'ok') {
+	echo "Сообщение отправлено".
+} else {
+	echo "Сообщение не отправлено".
+}
+*/
+
 echo '<pre>'; print_r($params); echo '</pre>';
 ?>
