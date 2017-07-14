@@ -43,7 +43,7 @@ if ($_POST['type'] == 'text') {
 	);
 }
 
-// Функция для преобразования введенных пользователем данных в целях безопасности, избавления от сторонних элементов.
+// Функция для преобразования введенных пользователем данных в целях безопасности и избавления от сторонних элементов.
 function clean_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
@@ -51,16 +51,6 @@ function clean_input($data) {
   return $data;
 }
 
-/*
 $api->sendMessage($params); 
-echo $api->response
-
-if ($api->response[status] == 'ok') {
-	echo "Сообщение отправлено".
-} else {
-	echo "Сообщение не отправлено".
-}
-*/
-
-echo '<pre>'; print_r($params); echo '</pre>';
+echo $api->response;
 ?>
