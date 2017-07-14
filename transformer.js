@@ -1,20 +1,37 @@
 
 // Трансформирует форму на основании выбора пользователя
-function checkRadio() {
-    if (document.getElementById('text').checked) {
-        document.getElementById('for_text').style.display = 'block';
-		document.getElementById('for_all').style.display = 'block';
-		document.getElementById('for_audio').style.display = 'none';
-		document.getElementById('for_dynamic').style.display = 'none';
-    } else if (document.getElementById('audio').checked) {
-		document.getElementById('for_audio').style.display = 'block';
-		document.getElementById('for_all').style.display = 'block';
-		document.getElementById('for_text').style.display = 'none';
-		document.getElementById('for_dynamic').style.display = 'none';
-	} else if (document.getElementById('dynamic').checked) {
-		document.getElementById('for_dynamic').style.display = 'block';
-		document.getElementById('for_all').style.display = 'block';
-		document.getElementById('for_text').style.display = 'none';
-		document.getElementById('for_audio').style.display = 'none';
-	}
-}	
+$(document).ready(function(){
+	
+	$("#for_text, #for_audio, #for_dynamic").hide();
+	
+	$("#text").click(function() {
+			
+		$("#for_text, #for_all").show();
+		$(".for_text, .for_all").prop('required',true);
+				
+		$("#for_audio, #for_dynamic").hide();
+		$(".for_audio, .for_dynamic").prop('required',false);
+		
+	});
+	
+	$("#audio").click(function() {
+			
+		$("#for_audio, #for_all").show();
+		$(".for_audio, .for_all").prop('required',true);
+				
+		$("#for_text, #for_dynamic").hide();
+		$(".for_text, .for_dynamic").prop('required',false);
+		
+	});
+	
+	$("#dynamic").click(function() {
+			
+		$("#for_dynamic, #for_all").show();
+		$(".for_dynamic, .for_all").prop('required',true);
+				
+		$("#for_text, #for_audio").hide();
+		$(".for_text, .for_audio").prop('required',false);
+		
+	});
+	
+});
